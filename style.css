@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    background-color: aquamarine;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.grid{
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    margin: -1px;
+}

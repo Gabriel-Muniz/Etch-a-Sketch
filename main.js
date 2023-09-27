@@ -13,6 +13,6 @@ container.style.width = `${Math.sqrt(totalCells) * 50}px`;
 console.log(divArray.length)
 divArray.forEach(gridIndividual => {
     gridIndividual.addEventListener('mouseover', () => {
-        gridIndividual.style.backgroundColor = 'black';
+        gridIndividual.style.backgroundColor = '#141414';
     })
 });

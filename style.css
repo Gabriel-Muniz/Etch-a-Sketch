@@ -1,6 +1,12 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #c4cdca;
+}
 .container{
     display: flex;
-    background-color: aquamarine;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;

@@ -32,9 +32,15 @@ function getGrid(){
 function addMouseoverEventListeners() {
     getGrid().forEach(grid => {
         grid.addEventListener('mouseover', () => {
-            grid.style.backgroundColor = "#141414";
+            grid.style.backgroundColor = `rgb(${getRandomNumber(255)}, ${getRandomNumber(255)}, ${getRandomNumber(255)})`;
         })
     });
+}
+
+function getRandomNumber(desiredNum) {
+    let num = Math.random() * desiredNum;
+    Math.floor(num);
+    return num;
 }
 
 function deleteGrid() {

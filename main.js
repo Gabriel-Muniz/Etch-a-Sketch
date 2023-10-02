@@ -1,18 +1,22 @@
 const container = document.querySelector('.container')
-divArray = []
-let totalCells = 256;
-for (let i = 0; i < totalCells; i++) {
-    let div = document.createElement('div');
-    div.classList.add('grid')
-    div.setAttribute('id', i + 1)
-    divArray[i] = div;
-    container.appendChild(div)
+const defaultSize = 16;
+let cellSize = defaultSize;
+
+drawGrid(cellSize);
+setCellSize(cellSize)
+function drawGrid(cellQuantity) {
+    for (let i = 0; i < cellQuantity * cellQuantity; i++) {
+        const divGrid = document.createElement('div');
+        divGrid.classList.add('gridCell');
+        container.appendChild(divGrid)
+    }
 }
 
-container.style.width = `${Math.sqrt(totalCells) * 50}px`;
-console.log(divArray.length)
-divArray.forEach(gridIndividual => {
-    gridIndividual.addEventListener('mouseover', () => {
-        gridIndividual.style.backgroundColor = '#141414';
-    })
-});
+function setCellSize() {
+    cellSize = 800 / cellSize;
+    const gridCells = document.querySelectorAll('.gridCell');
+    gridCells.forEach(cell => {
+        cell.style.width = `${cellSize}px`
+        cell.style.height = `${cellSize}px`
+    });
+}

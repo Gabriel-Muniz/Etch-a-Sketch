@@ -19,5 +19,5 @@ body{
 .container div{
     flex-shrink: 0;
     border: 1px solid black;
-    margin: -1px;
+    margin: 0px;
 }

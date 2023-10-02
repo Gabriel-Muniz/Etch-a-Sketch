@@ -16,7 +16,7 @@ function drawGrid(cellQuantity) {
 }
 
 function setCellSize(cellNewSize) {
-    cellSize = 800 / cellNewSize;
+    cellSize = (800 / cellNewSize) - 2;
     
     getGrid().forEach(cell => {
         cell.style.width = `${cellSize}px`
@@ -32,11 +32,19 @@ function getGrid(){
 function addMouseoverEventListeners() {
     getGrid().forEach(grid => {
         grid.addEventListener('mouseover', () => {
-            grid.style.backgroundColor = `rgb(${getRandomNumber(255)}, ${getRandomNumber(255)}, ${getRandomNumber(255)})`;
+            grid.style.backgroundColor = `rgb${getRandomColor()}`;
         })
     });
 }
 
+function getRandomColor(){
+    let red, green, blue;
+    red = getRandomNumber(255);
+    green = getRandomNumber(255);
+    blue = getRandomNumber(255);
+    return `(${red}, ${green}, ${blue})`;
+}
+console.log(getRandomColor());
 function getRandomNumber(desiredNum) {
     let num = Math.random() * desiredNum;
     Math.floor(num);

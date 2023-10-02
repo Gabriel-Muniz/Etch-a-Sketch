@@ -16,7 +16,7 @@ function drawGrid(cellQuantity) {
 }
 
 function setCellSize(cellNewSize) {
-    cellSize = (800 / cellNewSize) - 2;
+    cellSize = (700 / cellNewSize) - 2;
     
     getGrid().forEach(cell => {
         cell.style.width = `${cellSize}px`
@@ -44,6 +44,7 @@ function getRandomColor(){
     blue = getRandomNumber(255);
     return `(${red}, ${green}, ${blue})`;
 }
+
 console.log(getRandomColor());
 function getRandomNumber(desiredNum) {
     let num = Math.random() * desiredNum;

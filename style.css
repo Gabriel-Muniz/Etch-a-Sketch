@@ -8,6 +8,8 @@ body{
 .container{
     width: 800px;
     height: 800px;
+    flex-shrink: 0;
+    flex-grow: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -15,8 +17,6 @@ body{
 }
 .container div{
     flex-shrink: 0;
-    height: 48px;
-    width: 48px;
     border: 1px solid black;
     margin: -1px;
 }

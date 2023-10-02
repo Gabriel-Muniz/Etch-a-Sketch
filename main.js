@@ -1,6 +1,6 @@
 const container = document.querySelector('.container')
 const defaultSize = 16;
-let cellSize = defaultSize;
+let cellSize = 50;
 
 drawGrid(cellSize);
 setCellSize(cellSize)
@@ -14,9 +14,20 @@ function drawGrid(cellQuantity) {
 
 function setCellSize() {
     cellSize = 800 / cellSize;
-    const gridCells = document.querySelectorAll('.gridCell');
-    gridCells.forEach(cell => {
+    
+    getGrid().forEach(cell => {
         cell.style.width = `${cellSize}px`
         cell.style.height = `${cellSize}px`
     });
 }
+
+function getGrid(){
+    const gridCells = document.querySelectorAll('.gridCell');
+    return gridCells;
+}
+
+getGrid().forEach(grid => {
+    grid.addEventListener('mouseover', () => {
+        grid.style.backgroundColor = "#141414";
+    })
+});

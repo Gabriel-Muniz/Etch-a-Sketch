@@ -24,6 +24,7 @@ body{
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin: 0px;
 }
-.resize-btn{
-    margin-bottom: 20px;
+.slider-grid{
+    appearance: none;
+    width: 75%;
 }

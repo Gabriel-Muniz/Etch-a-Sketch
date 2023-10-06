@@ -1,4 +1,4 @@
-const container = document.querySelector('.container');
+const container = document.querySelector('.container-grid');
 const resizeBtn = document.querySelector('.resize-btn');
 const defaultSize = 16;
 let cellSize = defaultSize;
@@ -59,8 +59,8 @@ function deleteGrid() {
 }
 
 resizeBtn.addEventListener('click', () => {
-    let newSize = prompt("How many cells do you want?", defaultSize);
-    console.log("Button clicked");
+    newSize = +prompt("How many cells do you want?", defaultSize);
+    console.log(typeof newSize);
     deleteGrid()
     drawGrid(newSize);
     setCellSize(newSize)

@@ -6,7 +6,7 @@ body{
     height: 100vh;
     background-color: #c4cdca;
 }
-.container{
+.container-grid{
     width: 700px;
     height: 700px;
     flex-shrink: 0;
@@ -16,8 +16,11 @@ body{
     align-items: center;
     justify-content: center;
 }
-.container div{
+.container-grid div{
     flex-shrink: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin: 0px;
+}
+.resize-btn{
+    margin-bottom: 20px;
 }

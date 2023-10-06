@@ -1,4 +1,6 @@
 const container = document.querySelector('.container-grid');
+const slider = document.querySelector('.slider-grid');
+const sliderOutput = document.querySelectorAll('.slider-value')
 const resizeBtn = document.querySelector('.resize-btn');
 const defaultSize = 16;
 let cellSize = defaultSize;
@@ -13,6 +15,15 @@ function drawGrid(cellQuantity) {
     }
     setCellSize(cellQuantity);
     addMouseoverEventListeners();
+}
+
+slider.oninput = function() {
+    Array.from(sliderOutput).forEach(span => {
+        span.textContent = this.value;
+    })
+    deleteGrid()
+    drawGrid(this.value);
+    setCellSize(this.value)
 }
 
 function setCellSize(cellNewSize) {
@@ -57,11 +68,3 @@ function deleteGrid() {
         container.removeChild(container.firstChild);
     }
 }
-
-resizeBtn.addEventListener('click', () => {
-    newSize = +prompt("How many cells do you want?", defaultSize);
-    console.log(typeof newSize);
-    deleteGrid()
-    drawGrid(newSize);
-    setCellSize(newSize)
-})

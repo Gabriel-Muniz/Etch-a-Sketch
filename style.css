@@ -6,6 +6,9 @@ body{
     height: 100vh;
     background-color: #c4cdca;
 }
+.container{
+    display: flex;
+}
 .container-grid{
     width: 700px;
     height: 700px;

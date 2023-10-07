@@ -49,9 +49,23 @@ function getGrid(){
 
 function addMouseoverEventListeners() {
     getGrid().forEach(grid => {
-        grid.addEventListener('mouseover', () => {
-            console.log(selectedColor);
+        grid.addEventListener('click', () => {
             grid.style.backgroundColor = selectedColor;
+            grid.style.opacity = 1;
+            grid.setAttribute("id", "painted");
+        })
+        grid.addEventListener('mouseenter', () => {
+            if (grid.id !== "painted") {
+                grid.style.backgroundColor = selectedColor
+                grid.style.opacity = 0.1
+            }
+        })
+        grid.addEventListener('mouseout', () => {
+            if (grid.id !== "painted") {
+                grid.style.backgroundColor = 'inherit';
+                grid.style.opacity = 1;
+                grid.setAttribute("id", null);
+            }
         })
     });
 }

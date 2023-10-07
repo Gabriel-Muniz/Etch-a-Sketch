@@ -10,7 +10,7 @@ body{
     display: flex;
 }
 .container-grid{
-    background-color: rgb(252, 252, 252);
+    background-color: whitesmoke;
     width: 700px;
     height: 700px;
     flex-shrink: 0;
@@ -18,7 +18,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    border: 5px black solid;
+    border: 5px rgb(19,19,19) solid;
     justify-content: center;
 }
 .container-grid div{
@@ -28,5 +28,25 @@ body{
 }
 .slider-grid{
     appearance: none;
+    background: transparent;
+    cursor: pointer;
     width: 75%;
 }
+.slider-grid::-webkit-slider-runnable-track {
+    background: whitesmoke;
+    border-radius: 8px;
+    height: 16px;
+}
+.slider-grid::-moz-range-track {
+    background: whitesmoke;
+    border-radius: 5px;
+    height: 16px;
+  }
+  .slider-grid::-webkit-slider-thumb {
+    appearance: none;
+    height: 24px;
+    width: 10px;
+    margin-top: -4px;
+    background-color: rgb(19,19,19);
+    border-radius: 3px;
+  }

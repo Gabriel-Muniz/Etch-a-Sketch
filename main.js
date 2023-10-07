@@ -1,9 +1,11 @@
 const container = document.querySelector('.container-grid');
+const colorPicker = document.querySelector('.color-picker')
 const slider = document.querySelector('.slider-grid');
 const sliderOutput = document.querySelectorAll('.slider-value')
 const resizeBtn = document.querySelector('.resize-btn');
 const defaultSize = 16;
 let cellSize = defaultSize;
+let selectedColor = colorPicker.value;
 
 drawGrid(cellSize);
 
@@ -26,6 +28,11 @@ slider.oninput = function() {
     setCellSize(this.value)
 }
 
+colorPicker.addEventListener("input", function() {
+    console.log(this.value);
+    selectedColor = this.value;
+});
+
 function setCellSize(cellNewSize) {
     cellSize = (700 / cellNewSize) - 2;
     
@@ -43,7 +50,8 @@ function getGrid(){
 function addMouseoverEventListeners() {
     getGrid().forEach(grid => {
         grid.addEventListener('mouseover', () => {
-            grid.style.backgroundColor = `rgb${getRandomColor()}`;
+            console.log(selectedColor);
+            grid.style.backgroundColor = selectedColor;
         })
     });
 }

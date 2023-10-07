@@ -29,7 +29,6 @@ slider.oninput = function() {
 }
 
 colorPicker.addEventListener("input", function() {
-    console.log(this.value);
     selectedColor = this.value;
 });
 

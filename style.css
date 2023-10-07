@@ -9,12 +9,18 @@ body{
 .container{
     display: flex;
 }
+.container-left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
 .container-grid{
     background-color: whitesmoke;
     width: 700px;
     height: 700px;
     flex-shrink: 0;
-    flex-grow: 0;
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -42,7 +48,7 @@ body{
     border-radius: 5px;
     height: 16px;
   }
-  .slider-grid::-webkit-slider-thumb {
+.slider-grid::-webkit-slider-thumb {
     appearance: none;
     height: 24px;
     width: 10px;
@@ -50,3 +56,16 @@ body{
     background-color: rgb(19,19,19);
     border-radius: 3px;
   }
+.color-picker{
+    background: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border: none;
+}
+.color-picker::-webkit-color-swatch-wrapper{
+    padding: 0;
+}
